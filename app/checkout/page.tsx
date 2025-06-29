@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useCartStore } from "@/store/cart-store";
 import { checkoutAction } from "./checkout-action";
+import Link from "next/link";
 
 export default function CheckoutPage() {
     const {items, removeItem, addItem, clearCart} = useCartStore();
@@ -50,8 +51,10 @@ export default function CheckoutPage() {
                 <div className="mt-4 border-t pt-2 text-lg font-semibold">
                     Total: ฿{(total / 100).toFixed(2)}
                 </div>
+                <Link href="https://docs.stripe.com/testing" className="max-w-md mx-auto text-center hover:text-blue-600"> (Click here for testing credit cards) </Link>
             </CardContent>
         </Card>
+
         <form action={checkoutAction} className="max-w-md mx-auto">
             <input type="hidden" name="items" value={JSON.stringify(items)}/>
             <Button type="submit" variant="default" className="w-full bg-black text-white"> Proceed to Payment </Button>
