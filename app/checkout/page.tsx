@@ -17,6 +17,9 @@ export default function CheckoutPage() {
         return(
             <div className="container mx-auto px-4 py-8 text-center">
                 <h1 className="text-3xl font-bold mb-4"> Your Cart is Empty.</h1>
+            <Button asChild variant="default" className="inline-flex items-center justify-center rounded-full px-6 py-3 bg-black text-white">
+                <Link href="/products" className="inline-flex items-center justify-center rounded-full px-6 py-3">Browse All Products</Link>
+            </Button>
             </div>
         );
     }

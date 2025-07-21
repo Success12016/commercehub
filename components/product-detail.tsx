@@ -49,11 +49,11 @@ export const ProductDetail = ({ product }: Props) => {
           </p>
         )}
         <div className="flex items-center space-x-4">
-          <Button variant="outline" onClick={() => removeItem(product.id)}>
+          <Button variant="outline" className=" hover:bg-gray-100 cursor-pointer" onClick={() => removeItem(product.id)}>
             -
           </Button>
           <span className="text-lg font-semibold">{quantity}</span>
-          <Button onClick={onAddItem} className="bg-black text-white">+</Button>
+          <Button onClick={onAddItem} className="bg-black text-white hover:bg-gray-800 cursor-pointer">+</Button>
         </div>
       </div>
     </div>
